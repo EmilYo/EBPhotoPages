@@ -375,7 +375,7 @@
     UIColor *buttonTintColor = [self photoPagesTintColor];
     
     //[customView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.15]];
-
+    
     [customView.layer setCornerRadius:4.0];
     //[customView.layer setBorderColor:[buttonTintColor CGColor]];
     //[customView.layer setBorderWidth:1];
@@ -385,15 +385,14 @@
     [customView.layer setShadowRadius:1];
     
     if([customView isKindOfClass:[UIButton class]]){
-        NSString *fontName;
-        if(style == UIBarButtonItemStyleDone){
-            fontName = [self photoPagesBoldFontName];
-        } else {
-            fontName = [self photoPagesDefaultFontName];
-        }
-        
         CGFloat fontSize = 18;
-        UIFont *titleLabelFont = [UIFont fontWithName:fontName size:fontSize];
+        UIFont *titleLabelFont = nil;
+        
+        if(style == UIBarButtonItemStyleDone){
+            titleLabelFont = [UIFont boldSystemFontOfSize:fontSize];
+        } else {
+            titleLabelFont = [UIFont systemFontOfSize:fontSize];
+        }
         
         UIButton *button = (UIButton *)customView;
         [button.titleLabel setFont:titleLabelFont];

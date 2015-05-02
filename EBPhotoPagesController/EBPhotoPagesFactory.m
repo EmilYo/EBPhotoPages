@@ -25,6 +25,18 @@
 #include <math.h>
 //static inline double radians (double degrees) {return degrees * M_PI/180;}
 
+@interface EBHitRectButton : UIButton
+@end
+
+@implementation EBHitRectButton
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    CGRect hitRect = CGRectInset(self.bounds, -10, -10);
+    return CGRectContainsPoint(hitRect, point);
+}
+
+@end
+
 @implementation EBPhotoPagesFactory
 
 
@@ -340,7 +352,7 @@
                                      target:(id)aTarget
                                    selector:(SEL)aSelector
 {
-    UIButton *button = [UIButton new];
+    UIButton *button = [EBHitRectButton new];
     [button addTarget:aTarget action:aSelector forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTintColor:[self photoPagesTintColor]];

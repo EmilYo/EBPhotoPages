@@ -65,6 +65,9 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 @implementation EBPhotoPagesController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 - (id)init
 {

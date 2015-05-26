@@ -1079,6 +1079,9 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
         [self.currentState photoPagesController:self
                             didReceiveSingleTap:singleTap
                                withNotification:aNotification];
+        [self.photosDataSource photoPagesController:self
+                                didReceiveSingleTap:singleTap
+                                    forPhotoAtIndex:self.currentPhotoIndex];
     }
 }
 
@@ -1122,6 +1125,9 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
         [self.currentState photoPagesController:self
                             didReceiveLongPress:longPress
                                withNotification:notification];
+        [self.photosDataSource photoPagesController:self
+                                didReceiveLongPress:longPress
+                                    forPhotoAtIndex:self.currentPhotoIndex];
     }
 }
 

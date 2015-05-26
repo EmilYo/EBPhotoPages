@@ -296,9 +296,6 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
         [mutableLowerItems removeObject:self.commentsBarButtonItem];
     }
     
-    [mutableUpperItems removeObject:self.miscBarButtonItem];
-    [mutableLowerItems removeObject:self.miscBarButtonItem];
-    
     UIImage *commentsIcon = [self.photoPagesFactory
                              iconForCommentsBarButtonItemForPhotoPagesController:self
                              forState:UIControlStateNormal
